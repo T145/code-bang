@@ -20,7 +20,7 @@ def get_language_listing():
 
 def main(av, ac):
     language_listing = get_language_listing()
-    results = ' '.join(secrets.choice(language_listing) for i in range(3))
+    results = ' '.join(secrets.choice(language_listing) for i in range(5))
     print(results)
 
 if __name__ == "__main__":

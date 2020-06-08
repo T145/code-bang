@@ -14,4 +14,4 @@ A fun minigame for developers to learn new programming skills and build teams
 9. Detractors may be removed by the team captain at any time.
 10. Give credit back to "code-bang" by forking or starring the repo <3
 
-Have fun!W
+Have fun!
