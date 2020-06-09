@@ -4,7 +4,7 @@ import secrets
 import sys
 sys.dont_write_bytecode = True
 
-def get_language_listing():
+def get_wikipedia_langs():
     resp = requests.get('https://en.wikipedia.org/wiki/List_of_programming_languages')
     page = Soup(resp.text, features='html.parser')
     headings = page.body('div', attrs={'class': 'div-col columns column-width'})
@@ -19,9 +19,11 @@ def get_language_listing():
     return langs
 
 def main(av, ac):
-    language_listing = get_language_listing()
-    results = ' '.join(secrets.choice(language_listing) for i in range(5))
-    print(results)
+    langs = get_wikipedia_langs()
+    results = [secrets.choice(langs) for i in range(5)]
+
+    for i, result in enumerate(results):
+        print('{}. {}'.format(i+1, result))
 
 if __name__ == "__main__":
     main(sys.argv, len(sys.argv))
